@@ -5,6 +5,7 @@ Vamos a instalar un servidor web interno para un instituto. Se Pide:<br><br>
 
 Actualizar repositorios  sudo apt update<br>
 Instalar apache2 sudo apt install apache2
+Tendríamos listo apache y Comprobaremos que se ha instalado correctamente
 ![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap1.jpg)
 
 
