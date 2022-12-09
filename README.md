@@ -51,8 +51,12 @@ Vamos a ver que funcione centro.intranet y departamentos.centro.intranet<br>
 
 ### 2º Activar los módulos necesarios para ejecutar php y acceder a mysql<br><br>
 
-
-
+Vamos a instalar php sudo apt-get install php<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap4.jpg)<br>
+Instalaremos mysql server sudo apt-get install mysql-server<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap5.jpg)<br>
+Comprobamos que se ha instalado php<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap6.jpg)
 
 ### 3º Instala y configura wordpress<br><br>
 
