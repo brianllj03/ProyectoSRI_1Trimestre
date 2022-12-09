@@ -113,6 +113,17 @@ sudo service apache2 restart<br>
 
 ### 6º Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación<br><br>
 
+Instalamos las utilidades de apache<br>
+sudo apt-get install apache2-utils<br><br>
+Creamos el usuario<br>
+sudo htpasswd -c /etc/apache2/.htpasswd brian<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap15.jpg)
+
+
+
+
+
+
 
 ### 7º Instala y configura awstat.<br><br>
 
