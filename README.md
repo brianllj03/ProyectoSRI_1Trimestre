@@ -60,15 +60,55 @@ Comprobamos que se ha instalado php<br>
 
 ### 3º Instala y configura wordpress<br><br>
 
-
-
+Descargamos y extraemos wordpress de la página oficial<br>
+Nos conectaremos a mysql para crear la base de datos de wordpress<br>
+create database wordpress;<br><br>
+Creamos un usuario de la base de datos<br>
+grant all on wordpress.* to 'brian'@'localhost' identified by 'brian';<br><br>
+Reiniciamos apache<br>
+sudo service apache2 restart<br><br>
+Vamos al navegador y ya podremos visualizar wordpress y configurarlo<br>
+Escribimos las crendenciales<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap7.jpg)<br>
+Escribimos el usuario y contraseña<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap8.jpg)<br>
+Ya habremos acabado la configuración, podremos iniciar sesión y ya estariamos dentro<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap9.jpg)<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap10.jpg)<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap11.jpg)<br>
 
 ### 4º Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python<br><br>
 
-
+Vamos a ejecutar el siguiente comando:<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap12.jpg)
 
 ### 5º Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.<br><br>
 
+Creamos la carpeta departamentos.centro.intranet dentro del directorio html:<br>
+cd /var/www/html/
+sudo mkdir departamentos.centro.intranet<br><br><br>
+Cremaos 2 directorios mypythonapp y publi_html dentro de aquel directorio<br>
+cd /var/www/html/departamentos.centro.intranet<br>
+sudo mkdir mypythonapp<br>
+sudo mkdir public_html<br><br>
+Creamos un archivo python controlador dentro de la carpeta mypythonapp<br>
+cd /var/www/html/departamentos.centro.intranet/mypythonapp<br>
+sudo nano controller.py<br>
+En ella habrá:<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap13.jpg)<br><br>
+Creamos el archivo de virtual host en el directorio sites-available<br>
+cd /etc/apache2/sites-available<br>
+sudo nano departamentos.centro.intranet.conf<br><br>
+Añadiremos a las lineas del archivo de configuracion de departamentos.centro.intranet:<br>
+<VirtualHost *:80><br>
+    ServerName departamentos.centro.intranet<br>
+    DocumentRoot /var/www/html/departamentos.centro.intranet/public_html<br>
+    WSGIScriptAlias / /var/www/html/departamentos.centro.intranet/mypythonapp/controller.py<br>
+</VirtualHost><br><br>
+Habilitamos el virtualhost, lo reiniciamos y podremos entrar:<br>
+sudo a2ensite departamentos.centro.intranet.conf<br>
+sudo service apache2 restart<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap14.jpg)
 
 
 ### 6º Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación<br><br>
