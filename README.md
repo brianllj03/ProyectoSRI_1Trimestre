@@ -151,4 +151,21 @@ sudo service apache2 restart<br>
 
 ### 8º Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.<br><br>
 
+Instalamos nginx:<br>
+sudo apt install nginx<br><br>
+Habilitamos el servicio de nginx HTTP<br>
+sudo ufw allow 'Nginx HTTP'<br><br>
+Podemos visualizarlo, pero nos pide cambiar el puerto a uno deseado:<br>
+sudo nano /etc/nginx/sites-available/default<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap24.jpg)<br>
+Reiniciamos el servicio de nginx<br>
+sudo service nginx restart<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap25.jpg)
+
+
+
+
+
+
+
 
