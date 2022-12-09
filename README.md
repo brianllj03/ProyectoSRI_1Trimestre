@@ -117,13 +117,14 @@ Instalamos las utilidades de apache<br>
 sudo apt-get install apache2-utils<br><br>
 Creamos el usuario<br>
 sudo htpasswd -c /etc/apache2/.htpasswd brian<br>
-![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap15.jpg)
-
-
-
-
-
-
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap15.jpg)<br>
+Vamos al archivo departamentos.centro.intranet.conf y le añadimos lo siguiente:<br>
+sudo nano /etc/apache2/sites-enabled/departamentos.centro.intranet.conf<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap16.jpg)<br>
+Reiniciamos apache2<br>
+sudo systemctl restart apache2<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap17.jpg)
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap18.jpg)
 
 ### 7º Instala y configura awstat.<br><br>
 
