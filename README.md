@@ -128,6 +128,26 @@ sudo systemctl restart apache2<br>
 
 ### 7º Instala y configura awstat.<br><br>
 
+Instalamos el servicio de AWstats<br>
+sudo apt-get install awstats<br><br>
+Luego habilitamos el modulo cgi<br>
+sudo service apache2 restart<br>
+sudo a2enmod cgi<br><br>
+Configuramos el sitio web editando los siguientes puntos<br>
+sudo cp /etc/awstats/awstats.conf /etc/awstats/awstats.departamentos.centro.intranet.conf<br>
+sudo nano /etc/awstats/awstats.departamentos.centro.intranet.conf<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap19.jpg)<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap20.jpg)<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap21.jpg)<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap22.jpg)<br>
+Terminaremos de configurar el apache junto con el awstats<br>
+sudo /usr/lib/cgi-bin/awstats.pl -config=departamentos.centro.intranet -update<br><br>
+sudo cp -r /usr/lib/cgi-bin /var/www/html/departamentos.centro.intranet<br>
+sudo chown -R www-dat www-data /var/www/html/departamentos.centro.intranet/cgi-bin/<br><br>
+Haremos un restart en el apache:<br>
+sudo service apache2 restart<br>
+![](https://github.com/brianllj03/ProyectoSRI_1Trimestre/blob/main/cap23.jpg)
+
 
 ### 8º Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.<br><br>
 
